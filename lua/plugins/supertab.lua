@@ -27,6 +27,7 @@ return {
         ["<CR>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             if luasnip.expandable() then
+              vim.cmd([["<C-G>u"]])
               luasnip.expand()
             else
               cmp.confirm({
@@ -37,6 +38,13 @@ return {
             fallback()
           end
         end),
+        ["<esc>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.abort()
+          else
+            fallback()
+          end
+        end, { "i", "c" }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
