@@ -2,7 +2,12 @@ return {
   "stevearc/oil.nvim",
   ---@module 'oil'
   ---@type oil.SetupOpts
-  opts = {},
+  opts = {
+    keymaps = {
+      ["<C-l>"] = { false },
+      ["<C-h>"] = { false },
+    },
+  },
   keys = {
     { "<leader>o", "<cmd>Oil<cr>", desc = "Oil" },
   },
