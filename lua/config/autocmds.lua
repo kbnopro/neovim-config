@@ -9,3 +9,11 @@ vim.api.nvim_create_autocmd("User", {
     vim.o.undolevels = vim.o.undolevels
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWrite", {
+  pattern = vim.fn.expand("~") .. "/.config/ags/*",
+  callback = function()
+    vim.notify("Ags restarted.")
+    vim.cmd("silent !ags quit; uwsm app -s b ags run &")
+  end,
+})
