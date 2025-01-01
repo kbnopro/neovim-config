@@ -13,7 +13,14 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_autocmd("BufWrite", {
   pattern = vim.fn.expand("~") .. "/.config/ags/*",
   callback = function()
-    vim.notify("Ags restarted.")
-    vim.cmd("silent !ags quit; uwsm app -s b ags run &")
+    pcall(vim.system, { "ags", "quit" })
+    pcall(
+      vim.system,
+      { "uwsm", "app", "-s", "b", "--", "ags", "run", "-d", vim.fn.expand("~") .. "/.config/ags/src" },
+      {},
+      function(obj)
+        vim.notify(obj.stderr)
+      end
+    )
   end,
 })
