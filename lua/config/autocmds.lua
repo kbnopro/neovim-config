@@ -10,17 +10,12 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWrite", {
+vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = vim.fn.expand("~") .. "/.config/ags/*",
   callback = function()
     pcall(vim.system, { "ags", "quit" })
-    pcall(
-      vim.system,
-      { "uwsm", "app", "-s", "b", "--", "ags", "run", "-d", vim.fn.expand("~") .. "/.config/ags/src" },
-      {},
-      function(obj)
-        vim.notify(obj.stderr)
-      end
-    )
+    pcall(vim.system, { "uwsm", "app", "-s", "b", "--", "ags", "run" }, {}, function(obj)
+      vim.notify(obj.stderr)
+    end)
   end,
 })
