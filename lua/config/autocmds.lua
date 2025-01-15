@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = vim.fn.expand("~") .. "/.config/ags/*",
   callback = function()
     pcall(vim.system, { "ags", "quit" })
-    pcall(vim.system, { "uwsm", "app", "-s", "b", "--", "ags", "run" }, {}, function(obj)
+    pcall(vim.system, { "uwsm", "app", "-s", "b", "--", "ags", "run" }, { detach = true }, function(obj)
       vim.notify(obj.stderr)
     end)
   end,
