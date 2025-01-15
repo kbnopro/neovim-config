@@ -7,7 +7,7 @@ local snippet = {}
 local autosnippet = {
   s(
     {
-      trig = "tbf",
+      trig = "\\bf",
       dscr = "Text bold",
       regTrig = true,
       wordTrig = false,
@@ -21,7 +21,7 @@ local autosnippet = {
   ),
   s(
     {
-      trig = "tit",
+      trig = "\\it",
       dscr = "Text italic",
       regTrig = true,
       wordTrig = false,
@@ -35,7 +35,7 @@ local autosnippet = {
   ),
   s(
     {
-      trig = "txt",
+      trig = "\\text",
       dscr = "Text in mathzone",
       regTrig = true,
       wordTrig = false,
