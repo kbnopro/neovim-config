@@ -15,7 +15,7 @@ return {
             vim.api.nvim_create_autocmd("BufWritePre", {
               pattern = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.mts" },
               callback = function()
-                vim.lsp.buf.format()
+                vim.lsp.buf.format({ timeout_ms = 5000 })
               end,
               group = au_lsp,
             })
