@@ -14,9 +14,7 @@ return {
             local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
             vim.api.nvim_create_autocmd("BufWritePre", {
               pattern = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.mts" },
-              callback = function()
-                vim.lsp.buf.format({ timeout_ms = 5000 })
-              end,
+              callback = function() end,
               group = au_lsp,
             })
           end
