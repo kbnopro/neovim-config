@@ -6,12 +6,12 @@ local tex_utils = ls_tracked_dopackage("LuaSnip.tex.utils")
 local snippets = {}
 local auto_snippets = {
   s({
-    trig = "([^%a])ff",
+    trig = "ff",
     dscr = "Fraction",
     regTrig = true,
-    wordTrig = false,
+    wordTrig = true,
     condition = tex_utils.in_mathzone,
-  }, fmta([[<>\frac{<>}{<>}]], { utils.c(1), utils.v(1), i(2) })),
+  }, fmta([[\frac{<>}{<>}<>]], { utils.v(1), i(2), i(0) })),
   s(
     {
       trig = "(%b())ff",
@@ -33,7 +33,7 @@ local auto_snippets = {
     trig = "dff",
     dscr = "Fraction",
     regTrig = true,
-    wordTrig = false,
+    wordTrig = true,
     condition = tex_utils.in_mathzone,
     priority = 3000,
   }, fmta([[\dfrac{<>}{<>}]], { utils.v(1), i(2) })),

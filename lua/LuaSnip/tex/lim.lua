@@ -7,16 +7,32 @@ local snippets = {}
 local auto_snippets = {
   s(
     {
-      trig = "([^%a])lim",
+      trig = "lim",
       dscr = "Limit function",
       regTrig = true,
       condition = tex_utils.in_mathzone,
+      wordTrig = true,
     },
     fmta(
       [[
-      <>\lim_{<>} 
+      \lim_{<> \to <>} 
       ]],
-      { utils.c(1), i(1) }
+      { i(1), i(2) }
+    )
+  ),
+  s(
+    {
+      trig = "dlim",
+      dscr = "Limit function",
+      regTrig = true,
+      condition = tex_utils.in_mathzone,
+      wordTrig = true,
+    },
+    fmta(
+      [[
+      \lim\limits_{<> \to <>} 
+      ]],
+      { i(1), i(2) }
     )
   ),
 }

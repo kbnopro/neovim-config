@@ -11,11 +11,11 @@ local auto_snippets = {
       dscr = "Item in itemize",
       regTrig = true,
       wordTrig = false,
-      condition = tex_utils.in_mathzone,
+      condition = tex_utils.in_itemize,
     },
     fmta(
       [[
-      \item[\cmss <>] 
+      \item[\textbf{<>}] 
       ]],
       { i(1) }
     )
@@ -26,7 +26,7 @@ local auto_snippets = {
       dscr = "Item in itemize",
       regTrig = true,
       wordTrig = false,
-      condition = tex_utils.in_mathzone,
+      condition = tex_utils.in_itemize,
     },
     fmta(
       [[

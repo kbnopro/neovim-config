@@ -14,13 +14,13 @@ utils.in_text = make_condition(function()
   return vim.fn["vimtex#syntax#in_mathzone"]() == 0
 end)
 
-utils.in_env = make_condition(function(name) -- generic environment detection
+utils.in_env = function(name) -- generic environment detection
   local is_inside = vim.fn["vimtex#env#is_inside"](name)
   return (is_inside[1] > 0 and is_inside[2] > 0)
-end)
+end
 
 utils.in_itemize = make_condition(function()
-  return in_env("itemize")
+  return utils.in_env("itemize")
 end)
 
 return utils

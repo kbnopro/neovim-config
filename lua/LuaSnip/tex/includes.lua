@@ -13,12 +13,12 @@ local snippets = {
       [[
         \begin{center}
           \makebox[\textwidth]{
-            \fbox{\includegraphics[page=<>,clip,trim=0 0 0 0,width=0.75\paperwidth]{<>.pdf}}
+            \fbox{\includegraphics[page=<>,clip,trim=0 <> 0 0,width=0.55\paperwidth]{<>}}
           } 
         \end{center}
         <>
       ]],
-      { i(1), i(2), i(0) }
+      { i(1), i(3, "0"), i(2, "slide.pdf"), i(0) }
     )
   ),
 }

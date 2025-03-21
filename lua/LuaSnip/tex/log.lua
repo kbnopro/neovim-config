@@ -7,9 +7,9 @@ local snippets = {}
 local auto_snippets = {
   s(
     {
-      trig = "([^%a])lg",
+      trig = "log",
       dscr = "Logarite function",
-      regTrig = true,
+      wordTrig = true,
       condition = tex_utils.in_mathzone,
     },
     fmta(
@@ -19,12 +19,20 @@ local auto_snippets = {
       { utils.c(1), i(1) }
     )
   ),
-  s({
-    trig = "([^%a])ln",
-    dscr = "Natural log function",
-    regTrig = true,
-    condition = tex_utils.in_mathzone,
-  }, fmta([[<>\ln]], utils.c(1))),
+  s(
+    {
+      trig = "ln",
+      dscr = "Logarite function",
+      wordTrig = true,
+      condition = tex_utils.in_mathzone,
+    },
+    fmta(
+      [[
+      \log 
+      ]],
+      {}
+    )
+  ),
 }
 
 return snippets, auto_snippets

@@ -3,13 +3,11 @@
 local utils = ls_tracked_dopackage("LuaSnip.utils")
 local tex_utils = ls_tracked_dopackage("LuaSnip.tex.utils")
 
-local snippet = {}
-local autosnippet = {
+local snippet = {
   s(
     {
-      trig = "\\bf",
+      trig = "tbf",
       dscr = "Text bold",
-      regTrig = true,
       wordTrig = false,
     },
     fmta(
@@ -21,9 +19,8 @@ local autosnippet = {
   ),
   s(
     {
-      trig = "\\it",
+      trig = "tit",
       dscr = "Text italic",
-      regTrig = true,
       wordTrig = false,
     },
     fmta(
@@ -35,9 +32,8 @@ local autosnippet = {
   ),
   s(
     {
-      trig = "\\text",
+      trig = "txt",
       dscr = "Text in mathzone",
-      regTrig = true,
       wordTrig = false,
       condition = tex_utils.in_mathzone,
     },
@@ -49,5 +45,7 @@ local autosnippet = {
     )
   ),
 }
+
+local autosnippet = {}
 
 return snippet, autosnippet
