@@ -4,6 +4,9 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(_, opts)
+      vim.api.nvim_create_user_command("LuaSnipEdit", function()
+        require("luasnip.loaders").edit_snippet_files()
+      end, {})
       require("luasnip").setup(opts)
       require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/LuaSnip/" } })
       require("luasnip").config.set_config({
