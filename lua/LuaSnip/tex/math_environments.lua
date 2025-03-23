@@ -67,14 +67,14 @@ local snippet = {
     },
     fmta(
       [[
-      \begin{bmatrix}\end{bmatrix} <>
+      \begin{bmatrix}\end{bmatrix} <>.<>
       ]],
-      { i(0) }
+      { i(1), i(0) }
     )
   ),
   s(
     {
-      trig = "\\begin{bmatrix}\\end{bmatrix} ([%d]+)%.([%d]+)",
+      trig = "\\begin{bmatrix}\\end{bmatrix} ([%d]+)%.([%d]+) ",
       dscr = "Matrix",
       regTrig = true,
       wordTrig = true,
