@@ -5,25 +5,21 @@ local tex_utils = ls_tracked_dopackage("LuaSnip.tex.utils")
 
 local snippet = {}
 local autosnippet = {
-  ms(
+  s(
     {
-      common = {
-        dscr = "Generic environment",
-        regTrig = true,
-        wordTrig = false,
-      },
-      { trig = "^bb" },
-      { trig = "([^%a^%s])bb" },
+      dscr = "Generic environment",
+      regTrig = true,
+      wordTrig = true,
+      trig = "bb",
     },
     fmta(
       [[
-      <>\begin{<>}
+      \begin{<>}
         <>
       \end{<>}
       <>
     ]],
       {
-        utils.c(1),
         i(1),
         utils.v(2),
         rep(1),
@@ -33,51 +29,17 @@ local autosnippet = {
   ),
   s(
     {
-      dscr = "Generic environment",
+      dscr = "Inline math environment",
       regTrig = true,
-      wordTrig = false,
-      trig = "([%s])bb",
+      wordTrig = true,
+      condition = tex_utils.in_text,
+      trig = "mm",
     },
     fmta(
       [[
-      <>\begin{<>}
-      <>  <>
-      <>\end{<>}
-      <><>
-    ]],
-      {
-        utils.c(1),
-        i(1),
-        utils.c(1),
-        utils.v(2),
-        utils.c(1),
-        rep(1),
-        utils.c(1),
-        i(0),
-      }
-    )
-  ),
-  ms(
-    {
-      common = {
-        dscr = "Inline math environment",
-        regTrig = true,
-        wordTrig = false,
-        condition = tex_utils.in_text,
-      },
-      {
-        trig = "^mm",
-      },
-      {
-        trig = "([^%a])mm",
-      },
-    },
-    fmta(
-      [[
-        <>$<>$
+        $<>$
       ]],
       {
-        utils.c(1),
         utils.v(1),
       }
     )
