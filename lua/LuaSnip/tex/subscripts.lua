@@ -32,6 +32,19 @@ local autosnippet = {
       utils.c(3),
     })
   ),
+  s(
+    {
+      trig = "([%a])_",
+      dscr = "Auto expand subscripts",
+      regTrig = true,
+      wordTrig = false,
+      condition = tex_utils.in_mathzone,
+    },
+    fmta([[<>_{<>}]], {
+      utils.c(1),
+      i(1),
+    })
+  ),
 }
 
 return snippet, autosnippet

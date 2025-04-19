@@ -6,14 +6,7 @@ local tex_utils = ls_tracked_dopackage("LuaSnip.tex.utils")
 local snippets = {}
 local auto_snippets = {
   s({
-    trig = "([^%a])ap",
-    dscr = "Approach symbol",
-    regTrig = true,
-    condition = tex_utils.in_mathzone,
-    wordTrig = false,
-  }, fmta("<>\\rightarrow ", { utils.c(1) })),
-  s({
-    trig = "approx",
+    trig = "aprx",
     dscr = "Approximate symbol",
     regTrig = true,
     condition = tex_utils.in_mathzone,
