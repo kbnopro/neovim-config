@@ -9,7 +9,6 @@ local snippet = {
     {
       trig = "all",
       dscr = "Aligned with { at the beginning",
-      regTrig = true,
       wordTrig = true,
       condition = tex_utils.in_mathzone,
     },
@@ -26,7 +25,6 @@ local snippet = {
     {
       trig = "alt",
       dscr = "Top aligned",
-      regTrig = true,
       wordTrig = false,
       condtion = tex_utils.in_mathzone,
     },
@@ -43,7 +41,6 @@ local snippet = {
     {
       trig = "arr",
       dscr = "Array",
-      regTrig = true,
       wordTrig = true,
       condition = tex_utils.in_mathzone,
     },
