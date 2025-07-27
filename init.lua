@@ -5,7 +5,6 @@ vim.cmd("set textwidth=0")
 vim.cmd("set wrapmargin=0")
 vim.cmd("set wrap")
 vim.cmd("set linebreak")
-vim.cmd("set shell=/usr/bin/bash")
 
 --TODO: Try to keep the progress while still disabling the annoying ltex messages
 --https://github.com/folke/noice.nvim/wiki/A-Guide-to-Messages#lsp-messages

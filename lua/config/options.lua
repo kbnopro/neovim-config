@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
+vim.opt.shell = "/usr/bin/fish"
 
 -- Set to false to disable auto format
 vim.g.lazyvim_eslint_auto_format = true
