@@ -10,14 +10,14 @@ local autosnippet = {
     regTrig = true,
     wordTrig = false,
     condition = tex_utils.in_mathzone,
-    trig = "([%a]?_?{?[0-9]*}?^?{?[0-9]*}?),%.",
+    trig = "([%a]?_?{?%w*}?^?{?%w*}?),%.",
   }, fmta([[\vec{<>}]], { utils.c(1) })),
   s({
     dscr = "Vector",
     regTrig = true,
     wordTrig = false,
     condition = tex_utils.in_mathzone,
-    trig = "([%a]?_?{?[0-9]*}?^?{?[0-9]*}?)%.,",
+    trig = "([%a]?_?{?%w*}?^?{?%w*}?)%.,",
   }, fmta([[\vec{<>}]], { utils.c(1) })),
 }
 
