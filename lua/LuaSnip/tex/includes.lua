@@ -18,7 +18,7 @@ local snippets = {
         \end{center}
         <>
       ]],
-      { i(1), i(3, "0"), i(2, "slide.pdf"), i(0) }
+      { i(1), i(3, "0"), i(2, "\\file"), i(0) }
     )
   ),
 }
